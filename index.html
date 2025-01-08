@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcify</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="calculator-container">
+        <div class="mode-selector">
+            <label for="mode">Choose Mode:</label>
+            <select id="mode" onchange="switchMode()">
+                <option value="basic">Basic Calculator</option>
+                <option value="advanced">Advanced Calculator</option>
+                <option value="fraction">Fraction Calculator</option>
+            </select>
+        </div>
+
+        <div id="basic-calculator" class="calculator">
+            <div id="display" class="display"></div>
+            <div class="buttons">
+                <!-- Basic buttons -->
+                <button class="button" onclick="appendToDisplay('7')">7</button>
+                <button class="button" onclick="appendToDisplay('8')">8</button>
+                <button class="button" onclick="appendToDisplay('9')">9</button>
+                <button class="button operator" onclick="appendToDisplay('/')">/</button>
+                <button class="button" onclick="appendToDisplay('4')">4</button>
+                <button class="button" onclick="appendToDisplay('5')">5</button>
+                <button class="button" onclick="appendToDisplay('6')">6</button>
+                <button class="button operator" onclick="appendToDisplay('*')">*</button>
+                <button class="button" onclick="appendToDisplay('1')">1</button>
+                <button class="button" onclick="appendToDisplay('2')">2</button>
+                <button class="button" onclick="appendToDisplay('3')">3</button>
+                <button class="button operator" onclick="appendToDisplay('-')">-</button>
+                <button class="button" onclick="appendToDisplay('0')">0</button>
+                <button class="button" onclick="appendToDisplay('.')">.</button>
+                <button class="button" onclick="calculateResult()">=</button>
+                <button class="button operator" onclick="appendToDisplay('+')">+</button>
+                <button class="button" onclick="clearDisplay()">C</button>
+            </div>
+        </div>
+
+        <div id="advanced-calculator" class="calculator">
+            <div id="advanced-display" class="display"></div>
+            <div class="buttons">
+                <!-- Advanced buttons -->
+                <button class="button" onclick="appendToAdvancedDisplay('sqrt(')">√</button>
+                <button class="button" onclick="appendToAdvancedDisplay('^')">^</button>
+                <button class="button" onclick="appendToAdvancedDisplay('log(')">log</button>
+                <button class="button operator" onclick="appendToAdvancedDisplay('/')">/</button>
+                <button class="button" onclick="appendToAdvancedDisplay('7')">7</button>
+                <button class="button" onclick="appendToAdvancedDisplay('8')">8</button>
+                <button class="button" onclick="appendToAdvancedDisplay('9')">9</button>
+                <button class="button operator" onclick="appendToAdvancedDisplay('*')">*</button>
+                <button class="button" onclick="appendToAdvancedDisplay('4')">4</button>
+                <button class="button" onclick="appendToAdvancedDisplay('5')">5</button>
+                <button class="button" onclick="appendToAdvancedDisplay('6')">6</button>
+                <button class="button operator" onclick="appendToAdvancedDisplay('-')">-</button>
+                <button class="button" onclick="appendToAdvancedDisplay('1')">1</button>
+                <button class="button" onclick="appendToAdvancedDisplay('2')">2</button>
+                <button class="button" onclick="appendToAdvancedDisplay('3')">3</button>
+                <button class="button operator" onclick="appendToAdvancedDisplay('+')">+</button>
+                <button class="button" onclick="appendToAdvancedDisplay('0')">0</button>
+                <button class="button" onclick="appendToAdvancedDisplay('.')">.</button>
+                <button class="button" onclick="calculateAdvancedResult()">=</button>
+                <button class="button" onclick="clearAdvancedDisplay()">C</button>
+            </div>
+        </div>
+
+        <div id="fraction-calculator" class="calculator">
+            <div id="fraction-display" class="display"></div>
+            <div class="fraction-buttons">
+                <!-- Fraction buttons -->
+                <input type="number" id="numerator1" placeholder="Numerator" />
+                <input type="number" id="denominator1" placeholder="Denominator" />
+                <select id="fraction-op">
+                    <option value="+">+</option>
+                    <option value="-">-</option>
+                    <option value="*">*</option>
+                    <option value="/">/</option>
+                </select>
+                <input type="number" id="numerator2" placeholder="Numerator" />
+                <input type="number" id="denominator2" placeholder="Denominator" />
+                <button class="button" onclick="calculateFraction()">=</button>
+                <button class="button" onclick="clearFraction()">C</button>
+            </div>
+            <div id="fraction-result"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
