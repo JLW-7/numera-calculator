@@ -1,77 +1,85 @@
-* {
+body {
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-
-body {
     background-color: #2c3e50;
-    font-family: 'Arial', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    color: #fff;
+    color: #ecf0f1;
 }
 
-.calculator-container {
+header {
     background-color: #34495e;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-    width: 320px;
-}
-
-.mode-selector {
-    margin-bottom: 20px;
+    padding: 20px;
     text-align: center;
 }
 
-.display {
-    background-color: #1abc9c;
+header h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+nav a {
+    color: #ecf0f1;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+.container {
+    display: flex;
+}
+
+aside {
+    width: 20%;
+    background-color: #34495e;
     padding: 20px;
-    text-align: right;
-    border-radius: 10px;
-    font-size: 2rem;
-    margin-bottom: 20px;
 }
 
-.buttons, .fraction-buttons {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
+aside h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
 }
 
-.button {
-    background-color: #16a085;
-    border: none;
-    padding: 20px;
-    font-size: 1.5rem;
-    color: #fff;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+aside ul {
+    list-style: none;
+    padding: 0;
 }
 
-.button:hover {
-    background-color: #1abc9c;
-}
-
-.operator {
-    background-color: #2980b9;
-}
-
-.operator:hover {
-    background-color: #3498db;
-}
-
-input {
+aside ul li {
     padding: 10px;
-    font-size: 1.2rem;
-    width: 80px;
-    border-radius: 10px;
+    cursor: pointer;
 }
 
-button:active {
-    transform: scale(0.98);
+aside ul li.active {
+    background-color: #1abc9c;
+}
+
+main {
+    width: 80%;
+    padding: 20px;
+}
+
+.calculator {
+    display: none;
+}
+
+.calculator.active {
+    display: block;
+}
+
+.calculator input, 
+.calculator select, 
+.calculator button {
+    display: block;
+    margin: 10px 0;
+    padding: 10px;
+    width: 100%;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #34495e;
+}
+
+footer p {
+    margin: 0;
 }
