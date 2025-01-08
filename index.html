@@ -3,92 +3,154 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calcify</title>
     <link rel="stylesheet" href="styles.css">
+    <title>Numera</title>
 </head>
 <body>
-    <div class="calculator-container">
-        <div class="mode-selector">
-            <label for="mode">Choose Mode:</label>
-            <select id="mode" onchange="switchMode()">
-                <option value="basic">Basic Calculator</option>
-                <option value="advanced">Advanced Calculator</option>
-                <option value="fraction">Fraction Calculator</option>
-            </select>
-        </div>
-
-        <div id="basic-calculator" class="calculator">
-            <div id="display" class="display"></div>
-            <div class="buttons">
-                <!-- Basic buttons -->
-                <button class="button" onclick="appendToDisplay('7')">7</button>
-                <button class="button" onclick="appendToDisplay('8')">8</button>
-                <button class="button" onclick="appendToDisplay('9')">9</button>
-                <button class="button operator" onclick="appendToDisplay('/')">/</button>
-                <button class="button" onclick="appendToDisplay('4')">4</button>
-                <button class="button" onclick="appendToDisplay('5')">5</button>
-                <button class="button" onclick="appendToDisplay('6')">6</button>
-                <button class="button operator" onclick="appendToDisplay('*')">*</button>
-                <button class="button" onclick="appendToDisplay('1')">1</button>
-                <button class="button" onclick="appendToDisplay('2')">2</button>
-                <button class="button" onclick="appendToDisplay('3')">3</button>
-                <button class="button operator" onclick="appendToDisplay('-')">-</button>
-                <button class="button" onclick="appendToDisplay('0')">0</button>
-                <button class="button" onclick="appendToDisplay('.')">.</button>
-                <button class="button" onclick="calculateResult()">=</button>
-                <button class="button operator" onclick="appendToDisplay('+')">+</button>
-                <button class="button" onclick="clearDisplay()">C</button>
+    <header>
+        <h1>Numera</h1>
+        <nav>
+            <a href="#">About</a>
+        </nav>
+    </header>
+    <div class="container">
+        <aside>
+            <h2>Choose Mode</h2>
+            <ul>
+                <li data-mode="math" class="active">Math Calculator</li>
+                <li data-mode="bmi">BMI Calculator</li>
+                <li data-mode="gpa">GPA Calculator</li>
+                <li data-mode="mean">Mean Calculator</li>
+                <li data-mode="age">Age Calculator</li>
+                <li data-mode="time">Time Calculator</li>
+                <li data-mode="length">Length Converter</li>
+                <li data-mode="weight">Weight Converter</li>
+                <li data-mode="area">Area Converter</li>
+                <li data-mode="temperature">Temperature Converter</li>
+            </ul>
+        </aside>
+        <main>
+            <div id="math" class="calculator active">
+                <h2>Math Calculator</h2>
+                <input type="text" id="math-input" placeholder="Enter expression">
+                <button onclick="calculateMath()">Calculate</button>
+                <div id="math-result"></div>
             </div>
-        </div>
-
-        <div id="advanced-calculator" class="calculator">
-            <div id="advanced-display" class="display"></div>
-            <div class="buttons">
-                <!-- Advanced buttons -->
-                <button class="button" onclick="appendToAdvancedDisplay('sqrt(')">√</button>
-                <button class="button" onclick="appendToAdvancedDisplay('^')">^</button>
-                <button class="button" onclick="appendToAdvancedDisplay('log(')">log</button>
-                <button class="button operator" onclick="appendToAdvancedDisplay('/')">/</button>
-                <button class="button" onclick="appendToAdvancedDisplay('7')">7</button>
-                <button class="button" onclick="appendToAdvancedDisplay('8')">8</button>
-                <button class="button" onclick="appendToAdvancedDisplay('9')">9</button>
-                <button class="button operator" onclick="appendToAdvancedDisplay('*')">*</button>
-                <button class="button" onclick="appendToAdvancedDisplay('4')">4</button>
-                <button class="button" onclick="appendToAdvancedDisplay('5')">5</button>
-                <button class="button" onclick="appendToAdvancedDisplay('6')">6</button>
-                <button class="button operator" onclick="appendToAdvancedDisplay('-')">-</button>
-                <button class="button" onclick="appendToAdvancedDisplay('1')">1</button>
-                <button class="button" onclick="appendToAdvancedDisplay('2')">2</button>
-                <button class="button" onclick="appendToAdvancedDisplay('3')">3</button>
-                <button class="button operator" onclick="appendToAdvancedDisplay('+')">+</button>
-                <button class="button" onclick="appendToAdvancedDisplay('0')">0</button>
-                <button class="button" onclick="appendToAdvancedDisplay('.')">.</button>
-                <button class="button" onclick="calculateAdvancedResult()">=</button>
-                <button class="button" onclick="clearAdvancedDisplay()">C</button>
+            <div id="bmi" class="calculator">
+                <h2>BMI Calculator</h2>
+                <input type="number" id="bmi-weight" placeholder="Weight (kg)">
+                <input type="number" id="bmi-height" placeholder="Height (m)">
+                <button onclick="calculateBMI()">Calculate</button>
+                <div id="bmi-result"></div>
             </div>
-        </div>
-
-        <div id="fraction-calculator" class="calculator">
-            <div id="fraction-display" class="display"></div>
-            <div class="fraction-buttons">
-                <!-- Fraction buttons -->
-                <input type="number" id="numerator1" placeholder="Numerator" />
-                <input type="number" id="denominator1" placeholder="Denominator" />
-                <select id="fraction-op">
-                    <option value="+">+</option>
-                    <option value="-">-</option>
-                    <option value="*">*</option>
-                    <option value="/">/</option>
+            <div id="gpa" class="calculator">
+                <h2>GPA Calculator</h2>
+                <table id="gpa-table">
+                    <tr>
+                        <th>Subject</th>
+                        <th>Grade</th>
+                    </tr>
+                </table>
+                <button onclick="addSubject()">Add Subject</button>
+                <button onclick="calculateGPA()">Calculate GPA</button>
+                <div id="gpa-result"></div>
+            </div>
+            <div id="mean" class="calculator">
+                <h2>Mean Calculator</h2>
+                <input type="text" id="mean-input" placeholder="Enter numbers separated by commas">
+                <button onclick="calculateMean()">Calculate</button>
+                <div id="mean-result"></div>
+            </div>
+            <div id="age" class="calculator">
+                <h2>Age Calculator</h2>
+                <input type="date" id="age-dob">
+                <input type="date" id="age-date">
+                <button onclick="calculateAge()">Calculate</button>
+                <div id="age-result"></div>
+            </div>
+            <div id="time" class="calculator">
+                <h2>Time Calculator</h2>
+                <input type="number" id="time-hours" placeholder="Hours">
+                <input type="number" id="time-minutes" placeholder="Minutes">
+                <input type="number" id="time-seconds" placeholder="Seconds">
+                <button onclick="calculateTime()">Calculate</button>
+                <div id="time-result"></div>
+            </div>
+            <div id="length" class="calculator">
+                <h2>Length Converter</h2>
+                <input type="number" id="length-value" placeholder="Value">
+                <select id="length-from">
+                    <option value="meters">Meters</option>
+                    <option value="kilometers">Kilometers</option>
+                    <option value="feet">Feet</option>
+                    <option value="miles">Miles</option>
                 </select>
-                <input type="number" id="numerator2" placeholder="Numerator" />
-                <input type="number" id="denominator2" placeholder="Denominator" />
-                <button class="button" onclick="calculateFraction()">=</button>
-                <button class="button" onclick="clearFraction()">C</button>
+                <select id="length-to">
+                    <option value="meters">Meters</option>
+                    <option value="kilometers">Kilometers</option>
+                    <option value="feet">Feet</option>
+                    <option value="miles">Miles</option>
+                </select>
+                <button onclick="convertLength()">Convert</button>
+                <div id="length-result"></div>
             </div>
-            <div id="fraction-result"></div>
-        </div>
+            <div id="weight" class="calculator">
+                <h2>Weight Converter</h2>
+                <input type="number" id="weight-value" placeholder="Value">
+                <select id="weight-from">
+                    <option value="kilograms">Kilograms</option>
+                    <option value="grams">Grams</option>
+                    <option value="pounds">Pounds</option>
+                    <option value="ounces">Ounces</option>
+                </select>
+                <select id="weight-to">
+                    <option value="kilograms">Kilograms</option>
+                    <option value="grams">Grams</option>
+                    <option value="pounds">Pounds</option>
+                    <option value="ounces">Ounces</option>
+                </select>
+                <button onclick="convertWeight()">Convert</button>
+                <div id="weight-result"></div>
+            </div>
+            <div id="area" class="calculator">
+                <h2>Area Converter</h2>
+                <input type="number" id="area-value" placeholder="Value">
+                <select id="area-from">
+                    <option value="square meters">Square Meters</option>
+                    <option value="square kilometers">Square Kilometers</option>
+                    <option value="acres">Acres</option>
+                    <option value="hectares">Hectares</option>
+                </select>
+                <select id="area-to">
+                    <option value="square meters">Square Meters</option>
+                    <option value="square kilometers">Square Kilometers</option>
+                    <option value="acres">Acres</option>
+                    <option value="hectares">Hectares</option>
+                </select>
+                <button onclick="convertArea()">Convert</button>
+                <div id="area-result"></div>
+            </div>
+            <div id="temperature" class="calculator">
+                <h2>Temperature Converter</h2>
+                <input type="number" id="temperature-value" placeholder="Value">
+                <select id="temperature-from">
+                    <option value="celsius">Celsius</option>
+                    <option value="fahrenheit">Fahrenheit</option>
+                    <option value="kelvin">Kelvin</option>
+                </select>
+                <select id="temperature-to">
+                    <option value="celsius">Celsius</option>
+                    <option value="fahrenheit">Fahrenheit</option>
+                    <option value="kelvin">Kelvin</option>
+                </select>
+                <button onclick="convertTemperature()">Convert</button>
+                <div id="temperature-result"></div>
+            </div>
+        </main>
     </div>
-
+    <footer>
+        <p>Numera is a modern calculator and converter web app. &copy; 2025 Made By July Wu</p>
+    </footer>
     <script src="script.js"></script>
 </body>
 </html>
