@@ -16,6 +16,28 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+function appendNumber(number) {
+    const input = document.getElementById('math-input');
+    input.value = input.value === '0' ? number : input.value + number;
+}
+
+function appendOperator(operator) {
+    const input = document.getElementById('math-input');
+    input.value += operator;
+}
+
+function appendDot() {
+    const input = document.getElementById('math-input');
+    if (!input.value.includes('.')) {
+        input.value += '.';
+    }
+}
+
+function clearInput() {
+    document.getElementById('math-input').value = '';
+}
+
+
 function calculateMath() {
     const input = document.getElementById('math-input').value;
     try {
@@ -58,7 +80,7 @@ function calculateGPA() {
         }
     }
     const gpa = totalGrades / count;
-    document.getElementById('gpa-result').innerText = `GPA: ${gpa.toFixed(2)}`;
+    document.getElementById('gpa-result').innerText = `Average Grade: ${gpa.toFixed(2)}`;
 }
 
 function calculateMean() {
@@ -72,34 +94,35 @@ function calculateMean() {
     document.getElementById('mean-result').innerText = `Mean: ${mean.toFixed(2)}`;
 }
 
-function calculateAge() {
-    const dob = new Date(document.getElementById('age-dob').value);
-    const date = new Date(document.getElementById('age-date').value);
-    if (dob && date) {
-        const age = date.getFullYear() - dob.getFullYear();
-        document.getElementById('age-result').innerText = `Age: ${age} years`;
-    } else {
-        document.getElementById('age-result').innerText = 'Please enter valid dates';
-    }
-}
 
 function calculateTime() {
     const hours = parseInt(document.getElementById('time-hours').value) || 0;
     const minutes = parseInt(document.getElementById('time-minutes').value) || 0;
     const seconds = parseInt(document.getElementById('time-seconds').value) || 0;
-    const totalMinutes = hours * 60 + minutes + seconds / 60;
-    document.getElementById('time-result').innerText = `Total Time: ${totalMinutes.toFixed(2)} minutes`;
+    const unit = document.getElementById('time-unit').value;  // No parseInt here
+
+    if (unit === "seconds") {
+        const totalSeconds = hours * 3600 + minutes * 60 + seconds;
+        document.getElementById('time-result').innerText = `Total Time: ${totalSeconds} seconds`;
+    } else if (unit === "minutes") {
+        const totalMinutes = hours * 60 + minutes + seconds / 60;
+        document.getElementById('time-result').innerText = `Total Time: ${totalMinutes.toFixed(2)} minutes`;
+    } else if (unit === "hours") {
+        const totalHours = hours + minutes / 60 + seconds / 3600;
+        document.getElementById('time-result').innerText = `Total Time: ${totalHours.toFixed(2)} hours`;
+    }
 }
+
 
 function convertLength() {
     const value = parseFloat(document.getElementById('length-value').value);
     const fromUnit = document.getElementById('length-from').value;
     const toUnit = document.getElementById('length-to').value;
     const conversionRates = {
-        meters: 1,
-        kilometers: 0.001,
-        feet: 3.28084,
-        miles: 0.000621371
+        meters: 0.001,
+        kilometers: 1,
+        feet: 0.000621371,
+        miles: 3.28084
     };
     if (value && conversionRates[fromUnit] && conversionRates[toUnit]) {
         const result = (value * conversionRates[fromUnit]) / conversionRates[toUnit];
@@ -114,10 +137,10 @@ function convertWeight() {
     const fromUnit = document.getElementById('weight-from').value;
     const toUnit = document.getElementById('weight-to').value;
     const conversionRates = {
-        kilograms: 1,
-        grams: 1000,
-        pounds: 2.20462,
-        ounces: 35.274
+        kilograms: 1000,
+        grams: 1,
+        pounds: 35.274,
+        ounces: 2.20462
     };
     if (value && conversionRates[fromUnit] && conversionRates[toUnit]) {
         const result = (value * conversionRates[fromUnit]) / conversionRates[toUnit];
@@ -132,10 +155,10 @@ function convertArea() {
     const fromUnit = document.getElementById('area-from').value;
     const toUnit = document.getElementById('area-to').value;
     const conversionRates = {
-        'square meters': 1,
-        'square kilometers': 0.000001,
-        acres: 0.000247105,
-        hectares: 0.0001
+        'square meters': 0.000001,
+        'square kilometers': 1,
+        acres: 0.0001,
+        hectares: 0.000247105
     };
     if (value && conversionRates[fromUnit] && conversionRates[toUnit]) {
         const result = (value * conversionRates[fromUnit]) / conversionRates[toUnit];
