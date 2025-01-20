@@ -4,14 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <title>Numera</title>
 </head>
 <body>
     <header>
-        <h1>Numera</h1>
-        <nav>
-            <a href="#">About</a>
-        </nav>
+        <div class="logo">
+            <h1>Numera</h1>
+            <p>.com</p>
+        </div>
+        <p>"Effortless calculations, anytime, anywhere."</p>
     </header>
     <div class="container">
         <aside>
@@ -19,9 +21,8 @@
             <ul>
                 <li data-mode="math" class="active">Math Calculator</li>
                 <li data-mode="bmi">BMI Calculator</li>
-                <li data-mode="gpa">GPA Calculator</li>
+                <li data-mode="gpa">Grade Calculator</li>
                 <li data-mode="mean">Mean Calculator</li>
-                <li data-mode="age">Age Calculator</li>
                 <li data-mode="time">Time Calculator</li>
                 <li data-mode="length">Length Converter</li>
                 <li data-mode="weight">Weight Converter</li>
@@ -32,8 +33,26 @@
         <main>
             <div id="math" class="calculator active">
                 <h2>Math Calculator</h2>
-                <input type="text" id="math-input" placeholder="Enter expression">
-                <button onclick="calculateMath()">Calculate</button>
+                <div class="calculator-grid">
+                    <input type="text" id="math-input" placeholder="0">
+                    <button onclick="appendNumber('7')">7</button>
+                    <button onclick="appendNumber('8')">8</button>
+                    <button onclick="appendNumber('9')">9</button>
+                    <button onclick="appendOperator('/')">/</button>
+                    <button onclick="appendNumber('4')">4</button>
+                    <button onclick="appendNumber('5')">5</button>
+                    <button onclick="appendNumber('6')">6</button>
+                    <button onclick="appendOperator('*')">*</button>
+                    <button onclick="appendNumber('1')">1</button>
+                    <button onclick="appendNumber('2')">2</button>
+                    <button onclick="appendNumber('3')">3</button>
+                    <button onclick="appendOperator('-')">-</button>
+                    <button onclick="appendNumber('0')">0</button>
+                    <button onclick="appendDot()">.</button>
+                    <button onclick="calculateMath()">=</button>
+                    <button onclick="appendOperator('+')">+</button>
+                    <button onclick="clearInput()">C</button>
+                </div>
                 <div id="math-result"></div>
             </div>
             <div id="bmi" class="calculator">
@@ -44,7 +63,7 @@
                 <div id="bmi-result"></div>
             </div>
             <div id="gpa" class="calculator">
-                <h2>GPA Calculator</h2>
+                <h2>Grade Calculator</h2>
                 <table id="gpa-table">
                     <tr>
                         <th>Subject</th>
@@ -52,7 +71,7 @@
                     </tr>
                 </table>
                 <button onclick="addSubject()">Add Subject</button>
-                <button onclick="calculateGPA()">Calculate GPA</button>
+                <button onclick="calculateGPA()">Calculate Average Grade</button>
                 <div id="gpa-result"></div>
             </div>
             <div id="mean" class="calculator">
@@ -61,30 +80,32 @@
                 <button onclick="calculateMean()">Calculate</button>
                 <div id="mean-result"></div>
             </div>
-            <div id="age" class="calculator">
-                <h2>Age Calculator</h2>
-                <input type="date" id="age-dob">
-                <input type="date" id="age-date">
-                <button onclick="calculateAge()">Calculate</button>
-                <div id="age-result"></div>
-            </div>
             <div id="time" class="calculator">
                 <h2>Time Calculator</h2>
                 <input type="number" id="time-hours" placeholder="Hours">
                 <input type="number" id="time-minutes" placeholder="Minutes">
                 <input type="number" id="time-seconds" placeholder="Seconds">
+                <h3>Unit:</h3>
+                <select id="time-unit">
+                    <option value="seconds">seconds</option>
+                    <option value="minutes">minutes</option>
+                    <option value="hours">hours</option>
+                </select>
                 <button onclick="calculateTime()">Calculate</button>
+                <p style="font-size: 12px;">Note: Results are rounded to the nearest hundreth.</p>
                 <div id="time-result"></div>
             </div>
             <div id="length" class="calculator">
                 <h2>Length Converter</h2>
                 <input type="number" id="length-value" placeholder="Value">
+                <h3>From:</h3>
                 <select id="length-from">
                     <option value="meters">Meters</option>
                     <option value="kilometers">Kilometers</option>
                     <option value="feet">Feet</option>
                     <option value="miles">Miles</option>
                 </select>
+                <h3>To:</h3>
                 <select id="length-to">
                     <option value="meters">Meters</option>
                     <option value="kilometers">Kilometers</option>
@@ -92,17 +113,20 @@
                     <option value="miles">Miles</option>
                 </select>
                 <button onclick="convertLength()">Convert</button>
+                <p style="font-size: 12px;">Note: Results are rounded to the nearest hundreth.</p>
                 <div id="length-result"></div>
             </div>
             <div id="weight" class="calculator">
                 <h2>Weight Converter</h2>
                 <input type="number" id="weight-value" placeholder="Value">
+                <h3>From:</h3>
                 <select id="weight-from">
                     <option value="kilograms">Kilograms</option>
                     <option value="grams">Grams</option>
                     <option value="pounds">Pounds</option>
                     <option value="ounces">Ounces</option>
                 </select>
+                <h3>To:</h3>
                 <select id="weight-to">
                     <option value="kilograms">Kilograms</option>
                     <option value="grams">Grams</option>
@@ -110,17 +134,20 @@
                     <option value="ounces">Ounces</option>
                 </select>
                 <button onclick="convertWeight()">Convert</button>
+                <p style="font-size: 12px;">Note: Results are rounded to the nearest hundreth.</p>
                 <div id="weight-result"></div>
             </div>
             <div id="area" class="calculator">
                 <h2>Area Converter</h2>
                 <input type="number" id="area-value" placeholder="Value">
+                <h3>From:</h3>
                 <select id="area-from">
                     <option value="square meters">Square Meters</option>
                     <option value="square kilometers">Square Kilometers</option>
                     <option value="acres">Acres</option>
                     <option value="hectares">Hectares</option>
                 </select>
+                <h3>To:</h3>
                 <select id="area-to">
                     <option value="square meters">Square Meters</option>
                     <option value="square kilometers">Square Kilometers</option>
@@ -128,28 +155,33 @@
                     <option value="hectares">Hectares</option>
                 </select>
                 <button onclick="convertArea()">Convert</button>
+                <p style="font-size: 12px;">Note: Results are rounded to the nearest hundreth.</p>
                 <div id="area-result"></div>
             </div>
             <div id="temperature" class="calculator">
                 <h2>Temperature Converter</h2>
                 <input type="number" id="temperature-value" placeholder="Value">
+                <h3>From:</h3>
                 <select id="temperature-from">
                     <option value="celsius">Celsius</option>
                     <option value="fahrenheit">Fahrenheit</option>
                     <option value="kelvin">Kelvin</option>
                 </select>
+                <h3>To:</h3>
                 <select id="temperature-to">
                     <option value="celsius">Celsius</option>
                     <option value="fahrenheit">Fahrenheit</option>
                     <option value="kelvin">Kelvin</option>
                 </select>
                 <button onclick="convertTemperature()">Convert</button>
+                <p style="font-size: 12px;">Note: Results are rounded to the nearest hundreth.</p>
                 <div id="temperature-result"></div>
             </div>
         </main>
     </div>
     <footer>
-        <p>Numera is a modern calculator and converter web app. &copy; 2025 Made By July Wu</p>
+        <a href="aboutme.html">About</a><a href="privacy-policy.html">Privacy Policy.</a>
+        <p>&copy; 2025 Made By July Wu. All Rights Reserved.</p>
     </footer>
     <script src="script.js"></script>
 </body>
