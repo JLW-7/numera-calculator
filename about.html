@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - Calculator Website</title>
+    <style>
+        body {
+            font-family: "Avenir", sans-serif;
+            background-color:  #1e2a38;
+            color: #fffbfb;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0px auto;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 50px;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: #1988ff;
+            position: relative;
+            display: inline-block;
+        }
+
+        a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background-color: #1988ff;
+            left: 0;
+            bottom: -3px;
+            transition: width 0.3s ease;
+        }
+
+        a:hover::after {
+            width: 100%;
+        }
+
+        .highlight {
+            color: #63afff;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>About Me</h1>
+        <h2>Who Am I?</h2>
+        <p>
+            I'm <span class="highlight">July Wu</span>, a passionate full-stack developer and AI engineer. 
+            I am currently 12 years old, and this project is part of my journey to mastering front-end development. 
+        </p>
+        <br>
+        <h2>What Do I Do?</h2>
+        <p>I build applications, websites and AI driven-solutions, including tools like this calculator website. I focus on developing both the front-end and back-end, aiming to provide seamless user experiences.</p>
+        <br>
+        <h2>Hobbies</h2>
+        <p>
+            Outside of coding, I enjoy swimming, reading, and stargazing. Each of these activities fuels my creativity and helps me bring fresh ideas 
+            to my projects. Through this website, I aim to deliver a simple yet efficient tool for everyday calculations.
+        </p>
+        <br>
+        <h2>Contact</h2>
+        <p>
+            If you'd like to know more about my projects or get in touch, feel free to <a href="mailto:july.777.wu@gmail.com" target="_blank">email me</a>, or visit my personal website <a href="julyw.com" target="_blank">julywu.com</a>.
+        </p>
+    </div>
+</body>
+</html>
