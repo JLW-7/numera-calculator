@@ -175,3 +175,28 @@ footer a {
     color: #d0e8ff;
 }
 
+
+.hover-line {
+    position: relative;
+    display: inline-block;
+    margin: 0 10px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.hover-line::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;  
+    left: 100%;
+    width: 0;
+    height: 2px;
+    background-color: #d0e8ff;
+    transition: all 0.3s ease;
+}
+
+.hover-line:hover::after {
+    left: 0;
+    width: 100%;
+}
+
