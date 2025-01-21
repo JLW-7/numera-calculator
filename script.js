@@ -54,6 +54,19 @@ function calculateBMI() {
     if (weight && height) {
         const bmi = weight / (height * height);
         document.getElementById('bmi-result').innerText = `BMI: ${bmi.toFixed(2)}`;
+        if (bmi < 18.50) {
+            document.getElementById('bmi-category').innerText = 'You are categorized as underweight.';
+        } else if (bmi >= 18.50 && bmi <= 24.90) {
+            document.getElementById('bmi-category').innerText = 'You are categorized as normal.';
+        } else if (bmi >= 25 && bmi <= 29.9) {
+            document.getElementById('bmi-category').innerText = 'You are categorized as overweight.';
+        } else if (bmi>=30.0 && bmi <= 34.9) {
+            document.getElementById('bmi-category').innerText = 'You are categorized as class 1 obese.';
+        } else if (bmi >= 35.0 && bmi <= 39.9) {
+            document.getElementById('bmi-category').innerText = 'You are categorized as class 2 obese.';
+        } else if (bmi >= 40.0) {
+            document.getElementById('bmi-category').innerText = 'You are categorized as class 3 obese.';
+        }
     } else {
         document.getElementById('bmi-result').innerText = 'Please enter valid values';
     }
