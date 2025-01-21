@@ -61,6 +61,11 @@ aside ul li {
     color: #b0c6de;
 }
 
+aside ul li:hover {
+    background-color:#405973;
+    transition: all 0.3s ease;
+}
+
 aside ul li.active {
     background-color: #1e88e5;
     color: #ffffff;
@@ -94,16 +99,16 @@ main {
 .calculator-grid button {
     padding: 20px;
     font-size: 1rem;
-    border: none;
-    border-radius: 50px;
     cursor: pointer;
-    transition: background-color 0.3s;
-    background-color: #508bc5;
-    color: #ffffff;
+    transition: background-color 0.2s;
+    background-color: #ffffff;
+    color: #333333;
+    border: 1px solid #ccc;
+    border-radius: 20px;
 }
 
 .calculator-grid button:hover {
-    background-color: #75a9d8;
+    background-color: #b9dcfa;
 }
 
 .calculator-grid button:active {
@@ -148,10 +153,10 @@ main {
     margin: 10px 0;
     padding: 10px;
     width: 90%;
-    background-color: #ffffff;
-    color: #333333;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+}
+
+.bmi-about{
+    margin-top: 50px;
 }
 
 #bmi-weight, #bmi-height, #mean-input, #age-dob, #age-date, #length-value, #weight-value, #area-value, #temperature-value{
