@@ -44,7 +44,7 @@ A versatile calculator web application that allows users to perform various ever
 ## Getting Started
 
 To get started with the Numera Calculator Website, follow these steps:
-1. Simply click [numeracalc.com](numeracalc.com) to visit the website and start using the calculator.
+1. Simply click [numeracalc.com](https://numeracalc.com/) to visit the website and start using the calculator.
 
 Or you can:
 
