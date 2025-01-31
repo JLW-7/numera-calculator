@@ -1,4 +1,4 @@
-# Numera
+# ➕➖ Numera ✖️➗ 
 
 A versatile calculator web application that allows users to perform various everyday calculations.
 
