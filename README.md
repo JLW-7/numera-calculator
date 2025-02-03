@@ -2,51 +2,49 @@
   
   <h1>➕➖ Numera ✖️➗</h1>
   <p>A versatile calculator web application that allows users to perform various everyday calculations.</p>
-  <div>
-    <a href="https://numeracalc.com/">Website</a><p>|</p><a href="LICENSE">License</a>
-  </div>
+  
+  [Website](https://numeracalc.com/) | [License](LICENSE)
 </div>
 
-<br>
 
 ## Features
 
-### Math Calculator
+### 💻 Math Calculator
 - Perform standard arithmetic operations: addition, subtraction, multiplication, and division.
 - Clear and user-friendly interface for quick calculations.
 
-### BMI Calculator
+### 👤 BMI Calculator
 - Calculate your Body Mass Index (BMI) to determine if you are underweight, normal weight, overweight, or obese.
 - Input your height and weight to get instant results.
 
-### Grade Calculator
+### 💯 Grade Calculator
 - Compute your final grade based on the scores of your assignments, quizzes, and exams.
 
-### Mean Calculator
+### 🖥️ Mean Calculator
 - Find the mean (average) of a set of numbers quickly and easily.
 - Enter your data set to get the mean value instantly.
 
-### Time Calculator
+### 🕒 Time Calculator
 - Perform time-related calculations such as adding hours, minutes and seconds.
 - Convert between different time units effortlessly.
 
-### Length Converter
+### 📏 Length Converter
 - Convert between different units of length such as meters, kilometers, miles, and feet.
 - Get accurate conversions for all your measurement needs.
 
-### Weight Converter
+### ⚖️ Weight Converter
 - Convert between different units of weight such as kilograms, grams, pounds, and ounces.
 - Ensure precise conversions for cooking, shipping, and more.
 
-### Area Converter
+### ⬛️ Area Converter
 - Convert between different units of area such as square meters, square kilometers, acres, and hectares.
 - Useful for real estate, agriculture, and other applications.
 
-### Temperature Converter
+### 🌡️ Temperature Converter
 - Convert temperatures between Celsius, Fahrenheit, and Kelvin.
 - Ideal for scientific calculations, cooking, and weather-related conversions.
 
-
+<br>
 
 ## Getting Started
 
@@ -65,17 +63,23 @@ Or you can:
     ```
 3. Open `index.html` in your preferred web browser to start using the calculator.
 
+<br>
+
 ## Contributing
 
 I welcome contributions to enhance the functionality and features of the Numera Calculator Website. Feel free to open issues and submit pull requests.
+
+<br>
 
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
 
+<br>
+
 ## Contact
 
-For any questions or feedback, contact July Wu at [july.777.wu@gmail.com](mailto:july.777.wu@gmail.com).
+For any questions or feedback, contact [July Wu](github.com/JLW7) at [july.777.wu@gmail.com](mailto:july.777.wu@gmail.com).
 
 Enjoy calculating with Numera!
 
