@@ -1,6 +1,13 @@
-# ➕➖ Numera ✖️➗ 
+<div align="center">
+  
+  <h1>➕➖ Numera ✖️➗</h1>
+  <p>A versatile calculator web application that allows users to perform various everyday calculations.</p>
+  <div>
+    <a href="https://numeracalc.com/">Website</a><p>|</p><a href="LICENSE">License</a>
+  </div>
+</div>
 
-A versatile calculator web application that allows users to perform various everyday calculations.
+<br>
 
 ## Features
 
