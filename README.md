@@ -67,7 +67,7 @@ Or you can:
 
 ## Contributing
 
-I welcome contributions to enhance the functionality and features of the Numera Calculator Website. Feel free to open issues and submit pull requests.
+Feel free to open issues and submit pull requests to improve Numera!
 
 <br>
 
@@ -79,8 +79,9 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Contact
 
-For any questions or feedback, contact [July Wu](github.com/JLW7) at [july.777.wu@gmail.com](mailto:july.777.wu@gmail.com).
+For any questions or feedback, contact [July Wu](github.com/JLW7).
 
-Enjoy calculating with Numera!
+____
 
+Enjoy calculating with Numera! If you like it, please give a star
 
