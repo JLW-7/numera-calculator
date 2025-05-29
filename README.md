@@ -83,5 +83,5 @@ For any questions or feedback, contact [July Wu](github.com/JLW7).
 
 ____
 
-Enjoy calculating with Numera! If you like it, please give a star
+Enjoy calculating with Numera! If you like it, please give this repo a star! 
 
