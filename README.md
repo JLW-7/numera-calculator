@@ -1,11 +1,12 @@
 <div align="center">
   
   <h1>➕➖ Numera ✖️➗</h1>
-  <p>A versatile calculator web application that allows users to perform various everyday calculations.</p>
+  <p>Effortless calculations, anytime, anywhere.</p>
   
   [Website](https://numeracalc.com/) | [License](LICENSE)
 </div>
 
+Numera is a powerful and versatile calculator web application that allows users to perform various everyday calculations. Try it live [here](https://numeracalc.com/).
 
 ## Features
 
@@ -44,7 +45,7 @@
 - Convert temperatures between Celsius, Fahrenheit, and Kelvin.
 - Ideal for scientific calculations, cooking, and weather-related conversions.
 
-<br>
+---
 
 ## Getting Started
 
@@ -63,19 +64,19 @@ Or you can:
     ```
 3. Open `index.html` in your preferred web browser to start using the calculator.
 
-<br>
+---
 
 ## Contributing
 
 Feel free to open issues and submit pull requests to improve Numera!
 
-<br>
+---
 
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
 
-<br>
+---
 
 ## Contact
 
@@ -83,5 +84,5 @@ For any questions or feedback, contact [July Wu](github.com/JLW7).
 
 ____
 
-Enjoy calculating with Numera! If you like it, please give this repo a star! 
+Enjoy calculating with Numera! If it helped you, please give this repo a star! 
 
