@@ -3,6 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/numera-apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/numera-favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/numera-favicon-16x16.png">
+    <link rel="icon" type="image/x-icon" href="assets/numera-favicon.ico">
+    <link rel="manifest" href="assets/numera-site.webmanifest">
     <title>Privacy Policy - Numera Calculator</title>
     <style>
         body {
@@ -12,12 +18,70 @@
             line-height: 1.6;
             background-color: #1e2a38;
             color: rgb(200, 200, 200);
+            padding: 0;
         }
+
+        header {
+            background-color: #3b5b75;
+            padding: 10px;
+            font-family: "Poppins";
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            color: #ffffff;
+            margin-left: 10px;
+        }
+
+
+        header p{
+            color: #d0e8ff;
+            font-size: 20px;
+            margin-right: 10px;
+        }
+
+        header a{
+            text-decoration: none;
+            font-size: 20px;
+            color: #d0e8ff;
+            margin-right: 30px;
+            position: relative;
+        }
+
+        header a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background-color: #ffffff;
+            left: 0;
+            bottom: -3px;
+            transition: width 0.3s ease;
+        }
+
+        header a:hover::after {
+            width: 100%;
+        }
+
+        .logo{
+            display: flex;
+            gap: 5px;
+            align-items: baseline;
+        }
+
         .container {
             max-width: 800px;
             margin: 0 auto;
         }
-        h1, h2 {
+        h1 {
+            text-align: center;
+            font-size: 50px;
+            color: white;
+        }
+        h2 {
             color: white;
         }
         li a {
@@ -44,6 +108,13 @@
     </style>
 </head>
 <body>
+    <header>
+        <div class="logo">
+            <h1>Numera</h1>
+            <p>.com</p>
+        </div>
+        <a href="index.html">Back To Home</a>
+    </header>
     <div class="container">
         <h1>Privacy Policy</h1>
         <p>Effective date: 2024.1.22</p>

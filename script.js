@@ -134,8 +134,8 @@ function convertLength() {
     const conversionRates = {
         meters: 0.001,
         kilometers: 1,
-        feet: 0.000621371,
-        miles: 3.28084
+        feet: 0.00328084,
+        miles: 0.621371
     };
     if (value && conversionRates[fromUnit] && conversionRates[toUnit]) {
         const result = (value * conversionRates[fromUnit]) / conversionRates[toUnit];
